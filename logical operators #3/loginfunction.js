@@ -1,4 +1,4 @@
-let UserName = prompt("Whos there? :");
+let UserName = "";
 if (UserName === "Admin") {
     let enteredPassword = prompt("Password:");
     if (enteredPassword === "TheMaster") {
