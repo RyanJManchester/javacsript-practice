@@ -1,5 +1,5 @@
 let UserName = prompt("Whos there? :");
-if (UserName === ("Admin") {
+if (UserName === "Admin") {
     let enteredPassword = prompt("Password:");
     if (enteredPassword === "TheMaster") {
         document.getElementById("demo").innerHTML = "Admin Successful";
