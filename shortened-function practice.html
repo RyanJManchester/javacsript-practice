@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeleton for JS</title>
+  </head>
+  <body>
+    <script>
+      add7 = (num) => num + 7;
+      multiply = (num, num2) => num * num2;
+      lastLetter = (string) => {
+        let result = `${string.charAt(string.length - 1)}`;
+        return result;
+      };
+
+      function capitalized(string) {
+        // Works! Error was putting the return IN
+        // loop function, stopping it from attaching the next string section :p.
+        string.toLowerCase;
+        let textArray = string.split(" ");
+        let capitalizedText = "";
+        for (let i = 0; i < textArray.length; i++) {
+          capitalizedText +=
+            textArray[i].charAt(0).toUpperCase() + textArray[i].slice(1) + " ";
+        }
+        return capitalizedText;
+      }
+    </script>
+  </body>
+</html>

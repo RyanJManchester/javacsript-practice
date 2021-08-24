@@ -14,12 +14,13 @@ if (UserName === "Admin") {
         document.getElementById("demo").innerHTML = "Wrong Password";
     }
 }
+
+
 else if (UserName === "" || null) {
     alert("Cancelled,");
     Document.getElementById("demo").innerHTML = "no username";
 }
 else {
-    alert("Could'nt find an account under this name.\n
-     for help contact support.")
+    alert("Couldnt find an account under this name. for help contact support.")
     document.getElementById("demo").innerHTML = "unregistered";
 }
