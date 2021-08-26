@@ -2,20 +2,29 @@
 //declared global variables needed before functions are called
 let compA;
 let answerString;
+let gamesWon = 0;
+let userAnswer;
+//round function that goes to 5 games.
+function game() {
+
+}
+
 /*run. function that starts the game, and declares a winner.
 ^prompt for answer
 ^return of computed result.
-^ two inputs needed: playerSelection and Computer Selection
-*/
+^ two inputs needed: playerSelection and Computer Selection */
+
 function play() {
-    console.log(winner(playerAnswer(),computerAnswer()));
+    let playerarg = playerAnswer();
+    let computerarg = computerAnswer();
+    console.log(winner(userAnswer,computerAnswer()));
 }
 
 // ask player for their answer, and make it into a consistent, confirmed value.
 function playerAnswer() {
-    let userAnswer;
-    userAnswer = prompt("Rock,paper or scissors?");
-    return userAnswer.toLowerCase();
+    answer = prompt("Rock,paper or scissors?");
+    userAnswer = answer.toLowerCase();
+    return userAnswer;
     }
 //Computer play function - randomly returns rock, paper, or scissors
 function computerAnswer() {
@@ -40,19 +49,26 @@ function winner(player,compA) {
         answerString = `Its a tie! ${player} can't beat ${compA}.`;
     } else if (player == "rock" && compA == "scissors") {
         answerString = "You won! Rock beat's scissors.";
+        ++gamesWon;
     } else if (player == "paper" && compA == "scissors") {
         answerString = "You lost! scissors cut paper.";
+        gamesWon -1;
     } else if (player == "scissors" && compA == "paper") {
         answerString = "You won! scissors cut paper.";
+        ++gamesWon;
     } else if (player == "rock" && compA == "paper") {
-        answerString = "You lost! Paper wraps rock."
+        answerString = "You lost! Paper wraps rock.";
+        --gamesWon;
     } else if (player == "paper" && compA == "rock") {
         answerString = "You won! paper wrap's rock.";
+        ++gamesWon;
     } else if (player == "scissors" && compA == "rock") {
         answerString = "You lost! rock beats scissors.";
+        --gamesWon;
     } 
     else {
         answerString = "error - inside function winner()."
     }
+    console.log(gamesWon);
     return answerString;
 }
