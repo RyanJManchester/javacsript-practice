@@ -2,13 +2,24 @@
 //declared global variables needed before functions are called
 let compA;
 let answerString;
-let gamesWon = 0;
+let gamesWon;
+let gamesLost;
 let userAnswer;
 //round function that goes to 5 games.
-function game() {
+function game(num = 3) {
+ gamesWon = 0;
+ gamesLost = 0;
+while (gamesLost != num || gamesWon != num) {
+    play();
+    console.log(` you have won:${gamesWon} computer: ${gamesLost}.
+    first to 3 wins.`);
+    if (gamesLost == 3 || gamesWon == 3) {
+        stop;
+    };}
+}
+function winOrLose() {
 
 }
-
 /*run. function that starts the game, and declares a winner.
 ^prompt for answer
 ^return of computed result.
@@ -52,23 +63,21 @@ function winner(player,compA) {
         ++gamesWon;
     } else if (player == "paper" && compA == "scissors") {
         answerString = "You lost! scissors cut paper.";
-        gamesWon -1;
+        ++gamesLost;
     } else if (player == "scissors" && compA == "paper") {
         answerString = "You won! scissors cut paper.";
         ++gamesWon;
     } else if (player == "rock" && compA == "paper") {
         answerString = "You lost! Paper wraps rock.";
-        --gamesWon;
+        ++gamesLost;
     } else if (player == "paper" && compA == "rock") {
         answerString = "You won! paper wrap's rock.";
         ++gamesWon;
     } else if (player == "scissors" && compA == "rock") {
         answerString = "You lost! rock beats scissors.";
-        --gamesWon;
-    } 
-    else {
+        ++gamesLost;
+    }   else {
         answerString = "error - inside function winner()."
     }
-    console.log(gamesWon);
     return answerString;
 }
